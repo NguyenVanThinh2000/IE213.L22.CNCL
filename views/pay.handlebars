@@ -1,0 +1,51 @@
+<head>
+    <link rel="stylesheet" href="/css/pay.css">
+</head>
+
+
+<div class="grid wide" style="max-width: 400px;">
+    <div class="pay_title">
+        Thông tin nhận hàng
+    </div>
+
+    <div class="form_info">
+        <form method="post" action="/pay/order" style="margin-top: 20px;">
+            <div class="form-group">
+                <input type="text" class="form-control" id="name" name="name" placeholder="Họ và tên">
+            </div>
+            <div class="form-group">
+                <input type="email" class="form-control" id="email_order" name="email_order" placeholder="Email">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="address" name="address" placeholder="Địa chỉ giao hàng">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="phone" name="phone" placeholder="Số điện thoại">
+            </div>
+            <div class="form-group">
+                <textarea type="text" class="form-control" id="notes" name="notes" placeholder="Ghi chú" style="height: 100px;"></textarea>
+            </div>
+
+            <div class="money">
+                <div class="temp">
+                    <div class="temp_price">
+                        <span>Tạm tính: </span>
+                        <span>{{temp_price}} đ</span>
+                    </div>
+                    <div class="transport">
+                        <span>Phí vận chuyển: </span>
+                        <span>30.000 đ</span>
+                    </div>
+                </div>
+                
+                <div class="total">
+                    <span>Tổng cộng: </span>
+                    <span style="color: #f1971f; font-size: 22px;">{{total_price}} đ</span>
+                </div>
+            </div>
+
+            <button type="submit" class="btn" style="display: block; margin: auto; background-color: #f1971f; color:white;">Đặt hàng</button>
+        
+        </form>
+    </div>
+</div>

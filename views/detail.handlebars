@@ -1,0 +1,48 @@
+
+    <link rel="stylesheet" href="/css/products.css">
+    <link rel="stylesheet" href="/css/detail.css">
+    <!-- product detail -->
+
+    <div class="grid wide">
+        <div class="product-detail">
+            <div class="row">
+                <div class="col l-6">
+                    <div class="left">
+                        <img src="{{detail.image}}" alt="">
+                    </div>
+                </div>
+                <div class="col l-6">
+                    <div class="right">
+                        <div class="name">
+                            <span>
+                                {{detail.name}}
+                            </span>
+                        </div>
+                        <div class="brand">
+                            <span>
+                                {{detail.brand_}}
+                            </span>
+                        </div>
+                        <div class="price">
+                            <span>
+                                {{detail.price}}
+                            </span>
+                        </div>
+                        <div class="description">
+                            <p>
+                                {{detail.description}}
+                            </p>
+                        </div>
+
+                        <div class="pay">
+                            <a class="purchase" href="/cart/{{detail.id}}">Mua hàng</a>
+                            <a class="add_to_cart" href="/cart/{{detail.id}}">Thêm vào giỏ hàng</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- end product detail -->
+

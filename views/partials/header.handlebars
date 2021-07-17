@@ -1,0 +1,113 @@
+<div class="header">
+
+        <div class="header-top">
+            <div class="grid wide">    
+                <div class="row">
+
+                    <div class="col l-3">
+                        <img class="logo" src="/imgs/logo.png" alt="" class="logo">
+                    </div>
+
+                    <div class="col l-6">
+                        <div class="search">
+                            <form action="/search">
+                                <input name="search" placeholder="Nhập từ khóa tìm kiếm..." type="text">
+                                <button type="submit" class="btn">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="col l-3">
+                        <div class="admin">
+                            {{#if lcIsAuthenticated}}
+                            <div class="user">
+                                <div class="dropdown">
+                                    <i class="far fa-user"></i>
+                                    {{lcAuthUser.fullname}}
+                                    <i class="fas fa-caret-down"></i>
+                                </div>
+                                <div class="dropdown-content">
+                                    {{#if lcAuthUser.is_admin}}
+                                    <a href="/admin">Admin
+                                        <i class="fas fa-user-cog"></i>
+                                    </a>
+                                    {{/if}}
+                                    <a href="/cart">Giỏ hàng
+                                        <i class="fas fa-shopping-cart"></i>
+                                    </a>
+                                    <a href="/login/logout">Đăng xuất
+                                        <i class="fas fa-sign-out-alt"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            {{else}}
+                            
+                            <div class="register">
+                                <a href="/login" class="login">
+                                    <i class="fas fa-sign-in-alt"></i>
+                                    ĐĂNG NHẬP
+                                </a>
+                                <a href="/registry" class="registry">
+                                    <i class="fas fa-user-plus"></i>
+                                    ĐĂNG KÝ
+                                </a>
+                            </div>
+                            {{/if}}
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-top">
+            <div class="grid wide">
+                <div class="row">
+                    <div class="col l-3">
+                        <div class="category">
+                            <span class="show-menu">
+                                DANH MỤC SẢN PHẨM
+                            </span>
+                            <ul class="category-item">
+                                <li><a href="/all-products/ghe">
+                                    <i class="fas fa-chevron-right"></i>
+                                    <span>Ghế</span>
+                                </a></li>
+                                <li><a href="/all-products/ke_sach">
+                                    <i class="fas fa-chevron-right"></i>
+                                    <span>Kệ sách</span>
+                                </a></li>
+                                <li><a href="/all-products/ban">
+                                    <i class="fas fa-chevron-right"></i>
+                                    <span>Bàn</span>
+                                </a></li>
+                                <li><a href="/all-products/tu_quan_ao">
+                                    <i class="fas fa-chevron-right"></i>
+                                    <span>Tủ quần áo</span>
+                                </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="col l-6">
+                        <div class="menu-detail">
+                            <a class="menu-detail-item" href="/">TRANG CHỦ</a>
+                            <a class="menu-detail-item" href="#">GIỚI THIỆU</a>
+                            <a class="menu-detail-item" href="/all-products">SẢN PHẨM</a>
+                            <a class="menu-detail-item" href="#">TIN TỨC</a>
+                            <a class="menu-detail-item" href="#">LIÊN HỆ</a>
+                        </div>
+                    </div>
+
+                    <div class="col l-3">
+                        <span class="hotline">
+                            Hotline: <b>0971449695</b>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>

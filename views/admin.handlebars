@@ -1,0 +1,89 @@
+
+
+    <head>
+        <link rel="stylesheet" href="/css/products.css">
+        <link rel="stylesheet" href="/css/detail.css">
+        <link rel="stylesheet" href="/css/admin.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        
+    </head>
+
+
+
+    <div class="grid wide">
+        <div class="title_admin">
+            <p>Cập nhật sản phẩm</p>
+        </div>
+
+        <div class="table_products">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th class="col" scope="col">STT</th>
+                        <th class="col" scope="col">Tên sản phẩm</th>
+                        <th class="col" scope="col">Giá bán</th>
+                        <th class="" scope="col">
+                            <a href="/admin/add" class="btn btn">Thêm mới</a>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each products}}
+                    <tr>
+                        <th scope="row">{{this.id}}</th>
+                        <td>{{this.name}}</td>
+                        <td>{{this.price}}</td>
+                        <th class="" scope="col">
+                            <a href="/admin/{{this._id}}/edit" class="btn btn">Sửa</a>
+                            <a href="" class="btn btn" data-toggle="modal" data-target="#delete-product-modal" data-id="{{this._id}}">Xóa</a>
+                        </th>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+{{!-- confirm delete product --}}
+
+<div id="delete-product-modal" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body" style="padding-top:30px; ">
+                <h4> <b>Bạn chắc chắn muốn xóa sản phẩm này???</b> </h4>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" id="btn-delete-product">Xóa bỏ</button>
+                <button type="button" class="btn btn-sacondary" data-dismiss="modal">hủy</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{!-- end --}}
+
+{{!-- delete hiden form --}}
+<form name="delete_form" method="POST"></form>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var productID
+        var deleteForm = document.forms['delete_form'];
+        var btnDeleteProduct = document.getElementById('btn-delete-product');
+
+        $('#delete-product-modal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget)
+            productID = button.data('id')
+        });
+
+        
+        btnDeleteProduct.onclick = function(){
+            deleteForm.action = '/admin/' + productID + '?_method=DELETE';
+            deleteForm.submit();
+        };
+    }); 
+</script>

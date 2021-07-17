@@ -1,0 +1,32 @@
+.header{
+    height: 200px;
+}
+
+.pay_title{
+    text-align: center;
+    margin-top: 30px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #f1971f;
+}
+
+.money{
+    font-size: 18px;
+    font-weight: 500;
+    padding: 0 10px;
+    margin-bottom: 20px;
+}
+.money .temp .temp_price, .money .temp .transport, .money .total{
+    display: flex;
+    justify-content: space-between;
+}
+
+.money .temp .transport{
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #dcd8d8;
+}
+
+.form_info .btn:hover{
+    background-color: #c07005;
+}

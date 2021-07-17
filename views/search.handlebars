@@ -1,0 +1,96 @@
+
+<head>
+    <link rel="stylesheet" href="/css/products.css">
+</head>    
+
+<div class="grid wide">
+    <div class="box-menu">
+        <div class="box-menu-item">
+            <div class="img">
+                <a href="/all-products/ghe">
+                    <img src="https://bizweb.dktcdn.net/100/364/402/collections/043-chair-2.png?v=1566955399463" alt="">
+                </a>
+            </div>
+            <div class="text">
+                <a href="/all-products/ghe">
+                    <span>Ghế</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="box-menu-item">
+            <div class="img">
+                <a href="/all-products/ke_sach">
+                    <img src="https://bizweb.dktcdn.net/100/364/402/collections/012-shelf.png?v=1566955502117" alt="">
+                </a>
+            </div>
+            <div class="text">
+                <a href="/all-products/ke_sach">
+                    <span>Kệ sách</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="box-menu-item">
+            <div class="img">
+                <a href="/all-products/ban">
+                    <img src="https://bizweb.dktcdn.net/100/364/402/collections/006-table-1.png?v=1566955538897" alt="">
+                </a>
+            </div>
+            <div class="text">
+                <a href="/all-products/ban">
+                    <span>Bàn</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="box-menu-item">
+            <div class="img">
+                <a href="/all-products/tu_quan_ao">
+                    <img src="https://bizweb.dktcdn.net/100/364/402/collections/050-closet.png?v=1566955561490" alt="">
+                </a>
+            </div>
+            <div class="text">
+                <a href="/all-products/tu_quan_ao">
+                    <span>Tủ áo quần</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end header -->
+
+
+
+<!-- all products -->
+
+<div class="grid wide">
+    <div class="title-all-products">
+        <span id="res_search">Sản phẩm liên quan đến "{{query}}"</span>
+    </div>
+
+
+    <div class="all-products-items">
+        {{#each res_search}}
+        <div class="item">
+            <a href="/all-products/{{this.type}}/{{this.name}}">
+                <div class="animation">
+                    <img src="{{this.image}}" alt="">
+                </div>
+            </a>
+
+            <div class="content">
+                <a class="name" href="/all-products/{{this.type}}/{{this.name}}">
+                    {{this.name}}
+                </a>
+                <br>
+                <span class="price">
+                    {{this.price}}
+                </span>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
+
+<!-- end products -->

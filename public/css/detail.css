@@ -1,0 +1,79 @@
+.header{
+    height: 200px;
+}
+
+.product-detail{
+    margin-top: 64px;
+}
+
+.product-detail .left img{
+    width: 100%;
+}
+
+
+.product-detail .right{
+    background-color: #ededed;
+    /* height: 100%; */
+    padding: 30px;
+}
+
+.product-detail .right .name{
+    color: black;
+    font-size: 36px;
+    font-weight: 500;
+}
+
+.product-detail .right .brand{
+    text-transform: uppercase;
+    color: #6d6d6d;
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 8px;
+}
+
+.product-detail .right .price{
+    margin-top: 16px;
+    height: 46px;
+    width: 200px;
+    background-color: #f1971f;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 46px;
+    border-radius: 5px;
+    color: white;
+}
+
+.product-detail .right .description{
+    font-size: 18px;
+    margin-top: 16px;
+    color: black;
+}
+
+.pay{
+    display: flex;
+}
+.pay .add_to_cart{
+    margin-left: 10px;
+}
+.product-detail .right .purchase, .add_to_cart{
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    margin-top: 30px;
+    height: 46px;
+    line-height: 46px;
+    width: 150px;
+    background-color: #f1971f;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    transition: 0.3s;
+}
+.product-detail .right .purchase:hover, .add_to_cart:hover{
+    background-color: #c07005;
+    transition: 0.3s;
+    text-decoration: none;
+    color: white;
+}

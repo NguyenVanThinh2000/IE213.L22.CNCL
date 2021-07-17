@@ -1,0 +1,63 @@
+
+<head>
+    <link rel="stylesheet" href="/css/products.css">
+    <link rel="stylesheet" href="/css/detail.css">
+    <link rel="stylesheet" href="/css/admin.css">
+    <style>
+        .form-group.invalid .form-control {
+            border-color: #f33a58;
+        }
+
+        .form-group.invalid .form-message {
+            color: #f33a58;
+        }
+    </style>
+</head>
+
+<div class="grid wide" style="max-width: 400px">
+    <div class="title_admin">
+        <p>Đăng nhập</p>
+    </div>
+
+    <form method="post" action="/login/check_login" style="margin-top: 20px;" id="login">
+
+        <div class="form-group">
+            <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+            <span class="form-message"></span>
+        </div>
+        
+        <div class="form-group">
+            <input type="password" class="form-control" id="password" name="password" placeholder="Mật khẩu">
+            {{#if error}}
+            <span class="form-message" style="color: #f33a58;">{{error}}</span>
+            {{else}}
+            <span class="form-message"></span>
+            {{/if}}
+        </div>
+        <button type="submit" class="btn" style="display: block; margin: auto; background-color: #f1971f; color:white; ">Đăng nhập</button>
+        
+    </form>
+
+</div>
+
+<div class="registry" style="text-align:center; margin-top:10px">
+    <span>Bạn chưa có tài khoản, vui lòng đăng ký <a href="/registry">tại đây</a></span>
+</div>
+
+<script src="/script/validator.js"></script>
+<script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+    // Mong muốn của chúng ta
+    Validator({
+        form: '#login',
+        formGroupSelector: '.form-group',
+        errorSelector: '.form-message',
+        rules: [
+            Validator.isEmail('#email'),
+            Validator.minLength('#password', 6),
+        ],
+    });
+});
+
+</script>

@@ -1,0 +1,306 @@
+
+    <div class="grid wide">
+        <div class="box-menu">
+            <div class="box-menu-item">
+                <div class="img">
+                    <a href="/all-products/ghe">
+                        <img src="https://bizweb.dktcdn.net/100/364/402/collections/043-chair-2.png?v=1566955399463" alt="">
+                    </a>
+                </div>
+                <div class="text">
+                    <a href="/all-products/ghe">
+                        <span>Ghế</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="box-menu-item">
+                <div class="img">
+                    <a href="/all-products/ke_sach">
+                        <img src="https://bizweb.dktcdn.net/100/364/402/collections/012-shelf.png?v=1566955502117" alt="">
+                    </a>
+                </div>
+                <div class="text">
+                    <a href="/all-products/ke_sach">
+                        <span>Kệ sách</span>    
+                    </a>
+                </div>
+            </div>
+
+            <div class="box-menu-item">
+                <div class="img">
+                    <a href="/all-products/ban">
+                        <img src="https://bizweb.dktcdn.net/100/364/402/collections/006-table-1.png?v=1566955538897" alt="">
+                    </a>
+                </div>
+                <div class="text">
+                    <a href="/all-products/ban">
+                        <span>Bàn</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="box-menu-item">
+                <div class="img">
+                    <a href="/all-products/tu_quan_ao">
+                        <img src="https://bizweb.dktcdn.net/100/364/402/collections/050-closet.png?v=1566955561490" alt="">
+                    </a>
+                </div>
+                <div class="text">
+                    <a href="/all-products/tu_quan_ao">
+                        <span>Tủ áo quần</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- end header -->
+
+
+
+    <div class="grid wide">
+        <div class="container-highlights">
+            <div class="row">
+
+                <div class="col l-4">
+                    <div class="container-highlights-left">
+                        <a class="animation" href="/all-products/{{first_highlight.type}}/{{first_highlight.name}}">
+                            <img src="{{first_highlight.image}}" alt="">
+                        </a>
+
+                        <div class="content">
+                            <a class="name" href="/all-products/{{first_highlight.type}}/{{first_highlight.name}}">
+                                {{first_highlight.name}}
+                            </a>
+                            <br>
+                            <span class="brand">
+                                {{first_highlight.brand_}}
+                            </span >
+                            <br>
+                            <span class="price">
+                                {{first_highlight.price}}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col l-8">
+                    <div class="container-highlights-right">
+                        <div class="container-highlights-right-header">
+                            <div class="title">
+                                <span>SẢN PHẨM NỔI BẬT</span>
+                            </div>
+                            <div class="all">
+                                <a href="/all-products">
+                                    <span>
+                                        Xem tất cả
+                                    </span>
+                                    <i class="fas fa-chevron-right"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="container-highlights-right-items">
+                            <div class="row">
+                                {{#each highlight}}
+                                <div class="col l-3">
+                                    <div class="item">
+                                        <a href="/all-products/{{this.type}}/{{this.name}}">
+                                            <div class="animation">
+                                                <img src="{{this.image}}" alt="">
+                                            </div>
+                                        </a>
+
+                                        <div class="content">
+                                            <a class="name" href="/all-products/{{this.type}}/{{this.name}}">
+                                                {{this.name}}
+                                            </a>
+                                            <br>
+                                            <span class="price">
+                                                {{this.price}}
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{/each}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="adv-banner">
+        <div class="grid wide">
+            <div class="row">
+                <div class="col l-6">
+                    <div class="img">
+                        <img src="http://bizweb.dktcdn.net/100/364/402/themes/800065/assets/banner_1.jpg?1608225640995" alt="">
+                    </div>
+                </div>
+                <div class="col l-6">
+                    <div class="img">
+                        <img src="http://bizweb.dktcdn.net/100/364/402/themes/800065/assets/banner_2.jpg?1608225640995" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <div class="grid wide">
+        <div class="container-hot">
+            <div class="row">
+
+                <div class="col l-8">
+                    <div class="container-hot-left">
+                        <div class="container-hot-left-header">
+                            <div class="title">
+                                <span>SẢN PHẨM HOT</span>
+                            </div>
+                            <div class="all">
+                                <a href="/all-products">
+                                    <span>
+                                        Xem tất cả
+                                    </span>
+                                    <i class="fas fa-chevron-right"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="container-hot-left-items">
+                            <div class="row">
+                                {{#each hot}}
+                                <div class="col l-3">
+                                    <div class="item">
+                                        <a class="" href="/all-products/{{this.type}}/{{this.name}}">
+                                            <div class="animation">
+                                                <img src="{{this.image}}" alt="">
+                                            </div>
+                                        </a>
+
+                                        <div class="content">
+                                            <a class="name" href="/all-products/{{this.type}}/{{this.name}}">
+                                                {{this.name}}
+                                            </a>
+                                            <br>
+                                            <span class="price">
+                                                {{this.price}}
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{/each}}
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="col l-4">
+                    <div class="container-hot-right">
+                        <a class="animation" href="/all-products/{{first_hot.type}}/{{first_hot.name}}">
+                            <img src="{{first_hot.image}}" alt="">
+                        </a>
+
+                        <div class="content">
+                            <a class="name" href="/all-products/{{first_hot.type}}/{{first_hot.name}}">
+                                {{first_hot.name}}
+                            </a>
+                            <br>
+                            <span class="brand">
+                                {{first_hot.brand_}}
+                            </span >
+                            <br>
+                            <span class="price">
+                                {{first_hot.price}}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <div class="grid wide">
+        <div class="banner2">
+            <div class="img">
+                <img src="http://bizweb.dktcdn.net/100/364/402/themes/800065/assets/banner.jpg?1608225640995" alt="">
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="new-products">
+        <div class="grid wide">
+            <div class="new-products-header">
+                <div class="title">
+                    <span>SẢN PHẨM MỚI VỀ</span>
+                </div>
+
+                <div class="all">
+                    <a href="/all-products">
+                        <span>
+                            Xem tất cả
+                        </span>
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
+                </div>
+            </div>
+        
+            <div class="new-products-items">
+                <div class="row">
+                    {{#each new_products}}
+                    <div class="col l-2">
+                        <div class="item">
+                            <a href="/all-products/{{this.type}}/{{this.name}}">
+                                <div class="img">
+                                    <img src="{{this.image}}" alt="">
+                                </div>
+                            </a>
+
+                            <div class="content">
+                                <a class="name" href="/all-products/{{this.type}}/{{this.name}}">
+                                    {{this.name}}
+                                </a>
+                                <br>
+                                <span class="price">
+                                    {{this.price}}
+                                </span> 
+                            </div>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="grid wide">
+        <div class="tips">
+            <img src="/imgs/tips.png" alt="">
+        </div>
+    </div>
+

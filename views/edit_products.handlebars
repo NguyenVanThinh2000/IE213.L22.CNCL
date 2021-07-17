@@ -1,0 +1,50 @@
+
+<head>
+    <link rel="stylesheet" href="/css/products.css">
+    <link rel="stylesheet" href="/css/detail.css">
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+
+
+
+<div class="grid wide" style="max-width: 500px;">
+    <div class="title_admin">
+        <p>Chỉnh sửa sản phẩm</p>
+    </div>
+
+    <form method="POST" action="/admin/{{product._id}}?_method=PUT" style="margin-top: 20px;">
+        <div class="form-group">
+            <label for="name">Tên</label>
+            <input type="text" class="form-control" value="{{product.name}}" id="name" name="name" >
+        </div> 
+        <div class="form-group">
+            <label for="brand_">Thương hiệu</label>
+            <input type="text" class="form-control" value="{{product.brand_}}" id="brand_" name="brand_" >
+        </div>
+        <div class="form-group">
+            <label for="price">Giá bán (vd: 100.000 đ)</label>
+            <input type="text" class="form-control" value="{{product.price}}" id="price" name="price" >
+        </div>
+        <div class="form-group">
+            <label for="type">Loại sản phẩm (bàn:ban, ghế:ghe, kệ sách:ke_sach, tủ quần áo:tu_quan_ao)</label>
+            <input type="text" class="form-control" value="{{product.type}}" id="type" name="type" >
+        </div>
+        <div class="form-group">
+            <label for="image">link hình ảnh</label>
+            <input type="text" class="form-control" value="{{product.image}}" id="image" name="image" >
+        </div>
+        <div class="form-group">
+            <label for="status">Tình trạng (highlight, hot, normal)</label>
+            <input type="text" class="form-control" value="{{product.status}}" id="status" name="status" >
+        </div>
+        <div class="form-group">
+            <label for="description">mô tả</label>
+            <textarea type="text" class="form-control" id="description" name="description" style="height: 200px;">{{product.description}}</textarea>
+        </div>
+
+        <button type="submit" class="btn" style="display: block; margin: auto; background-color: #f1971f; color:white;">Lưu lại</button>
+        
+    </form>
+
+</div>
+

@@ -1,0 +1,90 @@
+
+<head>
+    <link rel="stylesheet" href="/css/products.css">
+    <link rel="stylesheet" href="/css/detail.css">
+    <link rel="stylesheet" href="/css/admin.css">
+
+    <style>
+        .form-group.invalid .form-control {
+            border-color: #f33a58;
+        }
+
+        .form-group.invalid .form-message {
+            color: #f33a58;
+        }
+    </style>
+</head>
+
+<div class="grid wide" style="max-width: 400px">
+    <div class="title_admin">
+        <p>Đăng ký tài khoản</p>
+    </div>
+
+    <form method="post" action="/registry/store" style="margin-top: 20px;" id="registry">
+        {{#if error}}
+        <div class="form-group">
+            <input type="text" class="form-control" value="{{fullname}}" id="fullname" name="fullname" placeholder="Họ và tên" ">
+            <span class="form-message"></span>
+        </div> 
+        <div class="form-group invalid">
+            <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="{{email}}">
+            <span class="form-message">{{error}}</span>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" id="phone" name="phone" placeholder="Số điện thoại" value="{{phone}}">
+            <span class="form-message"></span>
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" id="password" name="password" placeholder="Mật khẩu" value="{{password}}"> 
+            <span class="form-message"></span>
+        </div>
+
+
+        {{else}}
+
+
+        <div class="form-group">
+            <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Họ và tên" ">
+            <span class="form-message"></span>
+        </div> 
+        <div class="form-group">
+            <input type="email" class="form-control" id="email" name="email" placeholder="Email" ">
+            <span class="form-message error"></span>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" id="phone" name="phone" placeholder="Số điện thoại" ">
+            <span class="form-message"></span>
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" id="password" name="password" placeholder="Mật khẩu" "> 
+            <span class="form-message"></span>
+        </div>
+        {{/if}}
+        <button type="submit" class="btn" style="display: block; margin: auto; background-color: #f1971f; color:white; ">Đăng ký</button>
+        
+    </form>
+
+</div>
+
+
+
+
+<script src="/script/validator.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Mong muốn của chúng ta
+        Validator({
+            form: '#registry',
+            formGroupSelector: '.form-group',
+            errorSelector: '.form-message',
+            rules: [
+                Validator.isRequired('#fullname', 'Vui lòng nhập tên đầy đủ của bạn'),
+                Validator.isEmail('#email'),
+                Validator.isRequired('#phone', 'Vui lòng nhập số điện thoại của bạn'),
+                Validator.isRequired('#password', 'Vui lòng nhập mật khẩu'),
+                Validator.minLength('#password', 6),
+            ],
+        });
+    });
+</script>
