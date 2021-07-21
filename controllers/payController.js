@@ -4,20 +4,23 @@ const {convert_price} = require('../util/mongoose');
 const orders = require('../models/orders');
 class payController{
     index(req,res,next){
-        
-        account_carts.find({})
-            .then(account_carts => {
-                var user = req.session.authUser;
-                account_carts = account_carts.map(account_carts => account_carts.toObject())
-                var temp_price = 0;
-                for(var i=0; i<account_carts.length; i++){
-                    if(user.email == account_carts[i].email){
-                        temp_price += convert_price(account_carts[i].price);
+        if (req.session.isAuthenticated){
+            account_carts.find({})
+                .then(account_carts => {
+                    var user = req.session.authUser;
+                    account_carts = account_carts.map(account_carts => account_carts.toObject())
+                    var temp_price = 0;
+                    for(var i=0; i<account_carts.length; i++){
+                        if(user.email == account_carts[i].email){
+                            temp_price += convert_price(account_carts[i].price);
+                        }
                     }
-                }
-                var total_price = temp_price + 30000;
-                res.render('pay', {temp_price, total_price});
-            })
+                    var total_price = temp_price + 30000;
+                    res.render('pay', {temp_price, total_price});
+                })
+        }else{
+            res.render('login');
+        }
     }
 
     order(req,res,next){

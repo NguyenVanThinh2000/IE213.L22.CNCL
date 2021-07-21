@@ -3,22 +3,26 @@ const account_carts = require('../models/account_carts');
 const {convert_price} = require('../util/mongoose');
 class cartController{
     index(req,res,next){
-        account_carts.find({})
-            .then(account_carts => {
-                var order_account =[];
-                account_carts = account_carts.map(account_carts => account_carts.toObject());
-                for(var i=0; i<account_carts.length; i++){
-                    if (account_carts[i].email == req.session.authUser.email){
-                        order_account.push(account_carts[i]);
+        if (req.session.isAuthenticated){
+            account_carts.find({})
+                .then(account_carts => {
+                    var order_account =[];
+                    account_carts = account_carts.map(account_carts => account_carts.toObject());
+                    for(var i=0; i<account_carts.length; i++){
+                        if (account_carts[i].email == req.session.authUser.email){
+                            order_account.push(account_carts[i]);
+                        }
                     }
-                }
-                var price = 0;
-                for(var j=0; j<order_account.length; j++){
-                    price += convert_price(order_account[j].price);
-                }
-                res.render('cart', {order_account, price});
-            })
-            .catch(next);
+                    var price = 0;
+                    for(var j=0; j<order_account.length; j++){
+                        price += convert_price(order_account[j].price);
+                    }
+                    res.render('cart', {order_account, price});
+                })
+                .catch(next);
+        }else{
+            res.render('login');
+        }
     }
 
     add_to_cart(req,res,next){

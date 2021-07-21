@@ -2,12 +2,16 @@ const products = require('../models/products');
 const {mongooseToObject} = require('../util/mongoose');
 class adminController{
     index(req,res,next){
-        products.find({})
-            .then(products => {
-                products = products.map(products => products.toObject());
-                res.render('admin', {products});
-            })
-            .catch(next);
+        if (req.session.isAuthenticated){
+            products.find({})
+                .then(products => {
+                    products = products.map(products => products.toObject());
+                    res.render('admin', {products});
+                })
+                .catch(next);
+        }else{
+            res.render('login');
+        }
     }
 
     add(req,res,next){
@@ -20,7 +24,7 @@ class adminController{
         .then(products => {
             products = products.map(products => products.toObject());
             l = products.length;
-            const formData = req.body;
+            // const formData = req.body;
             product.id = l+1;
             product.save()
                 .then(() => res.redirect('/admin'))
