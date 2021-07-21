@@ -18,14 +18,12 @@ class adminController{
         res.render('add_products');
     }
     store(req,res,next){
-        var l = 0;
         const product = new products(req.body);
         products.find({})
         .then(products => {
             products = products.map(products => products.toObject());
-            l = products.length;
-            // const formData = req.body;
-            product.id = l+1;
+            var l = products.length;
+            product.id = l+2;
             product.save()
                 .then(() => res.redirect('/admin'))
                 .catch(error => {})
